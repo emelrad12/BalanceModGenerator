@@ -13,6 +13,39 @@ public static class FileChanges
         }
     }
 
+    private static double ApplyFunction(char functionChar, double functionValue, double value)
+    {
+        switch (functionChar)
+        {
+            case '*':
+                return value * functionValue;
+            case '/':
+                return value / functionValue;
+            case '+':
+                return value + functionValue;
+            case '-':
+                return value - functionValue;
+        }
+
+        throw new("Invalid function character");
+    }
+
+    private static void ApplyFunctionValue(JToken target, string key, bool isFunction, char functionChar, JToken value)
+    {
+        if (!isFunction)
+        {
+            target[key] = value;
+        }
+        else
+        {
+            var targetValue = target[key].Value<double>();
+            var targetIsInt = target[key].Type == JTokenType.Integer;
+            var finalValue = ApplyFunction(functionChar, value.Value<double>(), targetValue);
+            if (targetIsInt) target[key] = (int)finalValue;
+            else target[key] = finalValue;
+        }
+    }
+
     private static void ApplyChange(JObject json, string change)
     {
         // Split the change into path and value
@@ -28,6 +61,15 @@ public static class FileChanges
 
         // Parse the value as a number or string
         JToken value;
+        var tokenContainsFunction = false;
+        var functionChar = '0'; // default value which is invalid
+        if (valueStr.Contains("*") || valueStr.Contains("/") || valueStr.Contains("+") || valueStr.Contains("-"))
+        {
+            functionChar = valueStr[0];
+            tokenContainsFunction = true;
+            valueStr = valueStr[1..];
+        }
+
         if (int.TryParse(valueStr, out int numInt))
         {
             value = new JValue(numInt);
@@ -59,7 +101,8 @@ public static class FileChanges
                 currentObject = (JObject)currentObject[token];
                 if (i == tokens.Length - 2)
                 {
-                    currentObject[tokens[^1]] = value;
+                    ApplyFunctionValue(currentObject, tokens[^1], tokenContainsFunction, functionChar, value);
+                    // currentObject[tokens[^1]] = value;
                 }
             }
 
@@ -68,7 +111,8 @@ public static class FileChanges
                 var array = (JArray)currentObject[token];
                 for (int j = 0; j < array.Count; j++)
                 {
-                    array[j][tokens[i + 1]] = value;
+                    ApplyFunctionValue(array[j], tokens[i + 1], tokenContainsFunction, functionChar, value);
+                    // array[j][tokens[i + 1]] = value;
                 }
             }
 
