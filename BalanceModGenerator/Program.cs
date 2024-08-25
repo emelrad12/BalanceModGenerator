@@ -1,6 +1,10 @@
 ﻿using BalanceModGenerator;
 using Newtonsoft.Json.Linq;
 
+string[] factionChanges = ["max_supply.levels.max_supply: *5"];
+string[] factionFiles = ["entities/trader_loyalist.player", "entities/trader_rebel.player", "entities/vasari_loyalist.player", "entities/vasari_rebel.player", "entities/advent_loyalist.player", "entities/advent_rebel.player"];
+FileCreator.Create(factionFiles, factionChanges);
+
 string[] titanChanges = ["health.durability: 1000"];
 string[] titanFiles =
 [
@@ -35,7 +39,7 @@ string[] starbaseFiles =
 ];
 FileCreator.Create(starbaseFiles, starbaseChanges);
 
-string[] playerChanges = ["marginal_tax_rate_levels.credits.tax_rate: 0.0"];
+string[] playerChanges = ["marginal_tax_rate_levels.credits.tax_rate: *0.5"];
 string[] playerFiles = ["uniforms/player.uniforms"];
 FileCreator.Create(playerFiles, playerChanges);
 
