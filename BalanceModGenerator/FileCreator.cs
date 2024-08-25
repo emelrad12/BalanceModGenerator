@@ -4,16 +4,29 @@ namespace BalanceModGenerator;
 
 public class FileCreator
 {
-    static string targetFolder = "C:\\Users\\emelr\\AppData\\Local\\sins2\\mods\\rebalance_XL_2";
-    static string sourceFolder = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Sins2";
+    static string GetTargetFolderPath()
+    {
+        string userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        string targetFolder = Path.Combine(userProfile, "AppData", "Local", "sins2", "mods", "rebalance_XL_2");
+        return targetFolder;
+    }
+
+    // Function to get the source folder path
+    static string GetSourceFolderPath()
+    {
+        string programFiles = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86);
+        string sourceFolder = Path.Combine(programFiles, "Steam", "steamapps", "common", "Sins2");
+        return sourceFolder;
+    }
+
     public static void Create(string[] files, string[] changes)
     {
         foreach (var item in files)
         {
-            var file = File.ReadAllText(Path.Combine(sourceFolder, item));
+            var file = File.ReadAllText(Path.Combine(GetSourceFolderPath(), item));
             var json = JObject.Parse(file);
             FileChanges.ApplyChanges(json, changes);
-            File.WriteAllText(Path.Combine(targetFolder, item), json.ToString());
+            File.WriteAllText(Path.Combine(GetTargetFolderPath(), item), json.ToString());
         }
     }
 }
