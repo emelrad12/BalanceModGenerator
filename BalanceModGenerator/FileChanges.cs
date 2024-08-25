@@ -23,18 +23,29 @@ public static class FileChanges
             return;
         }
 
-        string path = parts[0].Trim();
-        string valueStr = parts[1].Trim();
+        var path = parts[0].Trim();
+        var valueStr = parts[1].Trim();
 
         // Parse the value as a number or string
         JToken value;
-        if (double.TryParse(valueStr, out double num))
+        if (int.TryParse(valueStr, out int numInt))
         {
-            value = new JValue(num);
+            value = new JValue(numInt);
+        }
+        else if (double.TryParse(valueStr, out double numDouble))
+        {
+            value = new JValue(numDouble);
         }
         else
         {
-            value = new JValue(valueStr);
+            if (valueStr.StartsWith("[") && valueStr.EndsWith("]"))
+            {
+                value = JArray.Parse(valueStr);
+            }
+            else
+            {
+                value = new JValue(valueStr);
+            }
         }
 
         // Navigate through the JSON object to apply the change

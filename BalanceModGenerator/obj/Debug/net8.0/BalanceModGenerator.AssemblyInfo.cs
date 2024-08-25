@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BalanceModGenerator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a12dfe40528e3dee6f2ccf8429faf3ce11a3c704")]
 [assembly: System.Reflection.AssemblyProductAttribute("BalanceModGenerator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BalanceModGenerator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

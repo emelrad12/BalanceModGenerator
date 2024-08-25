@@ -38,3 +38,7 @@ FileCreator.Create(starbaseFiles, starbaseChanges);
 string[] playerChanges = ["marginal_tax_rate_levels.credits.tax_rate: 0.0"];
 string[] playerFiles = ["uniforms/player.uniforms"];
 FileCreator.Create(playerFiles, playerChanges);
+
+string[] aiChanges = ["difficulties.unfair.fleet_will_probably_defeat_ratio_range: [0.7, 1.0]"];
+string[] aiFiles = ["uniforms/player_ai.uniforms"];
+FileCreator.Create(aiFiles, aiChanges);

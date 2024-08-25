@@ -15,3 +15,4 @@ C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\
 C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\obj\Debug\net8.0\BalanceModGenerator.pdb
 C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\obj\Debug\net8.0\BalanceModGenerator.genruntimeconfig.cache
 C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\obj\Debug\net8.0\ref\BalanceModGenerator.dll
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\obj\Debug\net8.0\BalanceModGenerator.sourcelink.json
