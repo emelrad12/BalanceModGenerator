@@ -2,25 +2,57 @@ using Newtonsoft.Json.Linq;
 
 namespace BalanceModGenerator;
 
-public class FileCreator
+public static class FileCreator
 {
-    static string GetTargetFolderPath()
+    public static string modName = "";
+
+    public static string GetTargetFolderPath()
     {
+        if (modName == "")
+        {
+            throw new("modName not set");
+        }
+
         string userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        string targetFolder = Path.Combine(userProfile, "AppData", "Local", "sins2", "mods", "rebalance_XL_2");
+        string targetFolder = Path.Combine(userProfile, "AppData", "Local", "sins2", "mods", modName);
         return targetFolder;
     }
 
-    // Function to get the source folder path
-    static string GetSourceFolderPath()
+    public static string GetSourceFolderPath()
     {
         string programFiles = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86);
         string sourceFolder = Path.Combine(programFiles, "Steam", "steamapps", "common", "Sins2");
         return sourceFolder;
     }
+    
+    static void CreateTargetFolders(string targetFolderPath)
+    {
+        if (!Directory.Exists(targetFolderPath))
+        {
+            Directory.CreateDirectory(targetFolderPath);
+            Console.WriteLine("Created target folder: " + targetFolderPath);
+        }
+
+        string entitiesFolderPath = Path.Combine(targetFolderPath, "entities");
+        string uniformsFolderPath = Path.Combine(targetFolderPath, "uniforms");
+
+        if (!Directory.Exists(entitiesFolderPath))
+        {
+            Directory.CreateDirectory(entitiesFolderPath);
+            Console.WriteLine("Created 'entities' folder: " + entitiesFolderPath);
+        }
+
+        if (!Directory.Exists(uniformsFolderPath))
+        {
+            Directory.CreateDirectory(uniformsFolderPath);
+            Console.WriteLine("Created 'uniforms' folder: " + uniformsFolderPath);
+        }
+    }
+
 
     public static void Create(string[] files, string[] changes)
     {
+        CreateTargetFolders(GetTargetFolderPath());
         foreach (var item in files)
         {
             var file = File.ReadAllText(Path.Combine(GetSourceFolderPath(), item));

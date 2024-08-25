@@ -1,5 +1,6 @@
 ﻿using BalanceModGenerator;
 
+FileCreator.modName = "rebalance_XL_2";
 FileCreator.Create(UnitHelpers.AllFactions, ["max_supply.levels.max_supply: *5"]);
 FileCreator.Create(UnitHelpers.AllTitans, ["health.durability: +350"]);
 FileCreator.Create(UnitHelpers.AllExtractors, ["structure.slots_required: 0"]);
