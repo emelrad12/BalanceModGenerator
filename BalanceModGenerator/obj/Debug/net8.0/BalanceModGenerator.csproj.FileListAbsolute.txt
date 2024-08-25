@@ -1,0 +1,17 @@
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\bin\Debug\net8.0\BalanceModGenerator.exe
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\bin\Debug\net8.0\BalanceModGenerator.deps.json
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\bin\Debug\net8.0\BalanceModGenerator.runtimeconfig.json
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\bin\Debug\net8.0\BalanceModGenerator.dll
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\bin\Debug\net8.0\BalanceModGenerator.pdb
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\obj\Debug\net8.0\BalanceModGenerator.csproj.AssemblyReference.cache
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\obj\Debug\net8.0\BalanceModGenerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\obj\Debug\net8.0\BalanceModGenerator.AssemblyInfoInputs.cache
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\obj\Debug\net8.0\BalanceModGenerator.AssemblyInfo.cs
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\obj\Debug\net8.0\BalanceModGenerator.csproj.CoreCompileInputs.cache
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\obj\Debug\net8.0\BalanceM.8FBD1F2E.Up2Date
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\obj\Debug\net8.0\BalanceModGenerator.dll
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\obj\Debug\net8.0\refint\BalanceModGenerator.dll
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\obj\Debug\net8.0\BalanceModGenerator.pdb
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\obj\Debug\net8.0\BalanceModGenerator.genruntimeconfig.cache
+C:\Users\emelr\AppData\Local\sins2\mods\BalanceModGenerator\BalanceModGenerator\obj\Debug\net8.0\ref\BalanceModGenerator.dll
