@@ -30,6 +30,20 @@ public static class FileChanges
         throw new("Invalid function character");
     }
 
+    //For some reason JToken.contains is not working
+    private static bool CheckIfContains(JToken target, string key)
+    {
+        try
+        {
+            target[key].Value<double>();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
     private static void ApplyFunctionValue(JToken target, string key, bool isFunction, char functionChar, JToken value)
     {
         if (!isFunction)
@@ -38,6 +52,12 @@ public static class FileChanges
         }
         else
         {
+            if (!CheckIfContains(target, key))
+            {
+                Console.WriteLine($"Warning: missing key {key}, probably safe to ignore if expected");
+                return;
+            }
+
             var targetValue = target[key].Value<double>();
             var targetIsInt = target[key].Type == JTokenType.Integer;
             var finalValue = ApplyFunction(functionChar, value.Value<double>(), targetValue);

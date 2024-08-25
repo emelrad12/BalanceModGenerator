@@ -32,4 +32,13 @@ public static class UnitHelpers
     public static string[] AllFactions = ["entities/trader_loyalist.player", "entities/trader_rebel.player", "entities/vasari_loyalist.player", "entities/vasari_rebel.player", "entities/advent_loyalist.player", "entities/advent_rebel.player"];
     public static string[] Player = ["uniforms/player.uniforms"];
     public static string[] AI = ["uniforms/player_ai.uniforms"];
+
+    public static string[] AllStrikeCraft =
+    [
+        "entities/trader_bomber_strikecraft.unit",
+        "entities/trader_interceptor_strikecraft.unit",
+        "entities/advent_bomber_strikecraft.unit",
+        "entities/advent_interceptor_strikecraft.unit",
+        "entities/vasari_bomber_strikecraft.unit",
+    ];
 }
